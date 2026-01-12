@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"GoRedis/src/utils"
+	"GoDatabase/src/utils"
 	"encoding/json"
 	"fmt"
 	"log"

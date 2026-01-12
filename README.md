@@ -4,8 +4,10 @@
 
 > - Below are the available routes.
 
-```plaintext
+```
 http://localhost:3000
+
+# Available routes.
 /ready
 /redis/ready
 /sql/ready

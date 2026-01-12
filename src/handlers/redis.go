@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"GoRedis/src/services"
-	"GoRedis/src/utils"
+	"GoDatabase/src/services"
+	"GoDatabase/src/utils"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -13,7 +13,7 @@ import (
 
 func RedisReadyHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
-	route := utils.ReadyRoute + " "
+	route := utils.RedisReadyRoute + " "
 	redisClient := services.NewRedisClient()
 	_, err := redisClient.Ping(ctx).Result()
 

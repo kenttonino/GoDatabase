@@ -1,4 +1,4 @@
-module GoRedis
+module GoDatabase
 
 go 1.24.4
 

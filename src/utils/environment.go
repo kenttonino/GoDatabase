@@ -3,5 +3,5 @@ package utils
 import "os"
 
 func Environment() {
-	os.Setenv("PORT", "7000")
+	os.Setenv("PORT", "3000")
 }

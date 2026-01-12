@@ -1,7 +1,7 @@
 package services
 
 import (
-	"GoRedis/src/utils"
+	"GoDatabase/src/utils"
 	"database/sql"
 	"fmt"
 

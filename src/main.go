@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GoRedis/src/handlers"
-	"GoRedis/src/utils"
+	"GoDatabase/src/handlers"
+	"GoDatabase/src/utils"
 	"log"
 	"net/http"
 	"os"
@@ -20,14 +20,14 @@ func main() {
 	log.Print(utils.TextGreen("Server live at port http://localhost:" + port))
 
 	// * These are all the server routes.
-	http.HandleFunc("/ready", handlers.ReadyHandler)
-	http.HandleFunc("/redis/ready", handlers.RedisReadyHandler)
-	http.HandleFunc("/sql/ready", handlers.SQLReadyHandler)
-	http.HandleFunc("/sql/create/user/table", handlers.SQLCreateUserTableHandler)
+	http.HandleFunc("GET /ready", handlers.ReadyHandler)
+	http.HandleFunc("GET /redis/ready", handlers.RedisReadyHandler)
+	http.HandleFunc("GET /sql/ready", handlers.SQLReadyHandler)
+	http.HandleFunc("POST /sql/create/user/table", handlers.SQLCreateUserTableHandler)
 
 	// * You can setup the server here.
 	s := &http.Server{
-		Addr:           "localhost:7000",
+		Addr:           "localhost:" + port,
 		MaxHeaderBytes: 1 << 20,
 	}
 
