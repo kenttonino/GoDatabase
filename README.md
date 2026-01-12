@@ -1,6 +1,6 @@
 ## Description
 
-> - A playground anything related to Backend System with Go.
+> - A playground anything related to Databases integration with Go.
 
 > - Below are the available routes.
 
