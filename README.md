@@ -21,7 +21,7 @@ http://localhost:3000
 
 
 
-## Development Setup
+## Setup
 
 > - Install `GNU Make` and `Grafana k6`.
 
