@@ -12,3 +12,6 @@ install:
 
 run:
 	go run ./src/main.go
+
+run-k6:
+	k6 run ./src/main-k6.js

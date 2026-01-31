@@ -26,6 +26,9 @@ http://localhost:3000
 > - Run the following commands.
 
 ```sh
-# * Run the HTTP server.
+# Run the HTTP server.
 make run
+
+# (Optional) If want to run k6 load testing.
+make run-k6
 ```
