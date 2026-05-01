@@ -1,4 +1,4 @@
-package handlers
+package sqlite
 
 import (
 	"GoDatabase/src/services"
@@ -10,20 +10,20 @@ import (
 	"strconv"
 )
 
-func sqlRouteError(err string, w http.ResponseWriter) {
+func routeError(err string, w http.ResponseWriter) {
 	log.Println(utils.TextRed(err))
 	errResponse := &utils.HTTPResponse{Message: err, Status: http.StatusBadRequest}
 	errResponseJson, _ := json.Marshal(errResponse)
 	fmt.Fprint(w, string(errResponseJson))
 }
 
-func SQLReadyHandler(w http.ResponseWriter, r *http.Request) {
+func ReadyHandler(w http.ResponseWriter, r *http.Request) {
 	route := utils.SQLReadyRoute + " "
 
 	db, err := services.CreateSQLInstance()
 
 	if err != nil {
-		sqlRouteError(err.Error(), w)
+		routeError(err.Error(), w)
 		return
 	}
 	defer db.Close()
@@ -34,12 +34,12 @@ func SQLReadyHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, string(responseJson))
 }
 
-func SQLCreateUserTableHandler(w http.ResponseWriter, r *http.Request) {
+func CreateUserTableHandler(w http.ResponseWriter, r *http.Request) {
 	route := utils.SQLCreateUserTableRoute + " "
 	err := services.CreateSQLUserTable()
 
 	if err != nil {
-		sqlRouteError(err.Error(), w)
+		routeError(err.Error(), w)
 		return
 	}
 

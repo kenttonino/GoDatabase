@@ -1,7 +1,9 @@
 package main
 
 import (
-	"GoDatabase/src/handlers"
+	"GoDatabase/src/database/health_check"
+	"GoDatabase/src/database/redis"
+	"GoDatabase/src/database/sqlite"
 	"GoDatabase/src/utils"
 	"log"
 	"net/http"
@@ -20,10 +22,10 @@ func main() {
 	log.Print(utils.TextGreen("Server live at port http://localhost:" + port))
 
 	// * These are all the server routes.
-	http.HandleFunc("GET /ready", handlers.ReadyHandler)
-	http.HandleFunc("GET /redis/ready", handlers.RedisReadyHandler)
-	http.HandleFunc("GET /sql/ready", handlers.SQLReadyHandler)
-	http.HandleFunc("POST /sql/create/user/table", handlers.SQLCreateUserTableHandler)
+	http.HandleFunc("GET /ready", health_check.ReadyHandler)
+	http.HandleFunc("GET /redis/ready", redis.ReadyHandler)
+	http.HandleFunc("GET /sqlite/ready", sqlite.ReadyHandler)
+	http.HandleFunc("POST /sqlite/create/user/table", sqlite.CreateUserTableHandler)
 
 	// * You can setup the server here.
 	s := &http.Server{

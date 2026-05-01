@@ -10,8 +10,8 @@ http://localhost:3000
 # Available routes.
 /ready
 /redis/ready
-/sql/ready
-/sql/create/user/table
+/sqlite/ready
+/sqlite/create/user/table
 ```
 
 

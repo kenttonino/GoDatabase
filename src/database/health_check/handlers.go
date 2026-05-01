@@ -1,4 +1,4 @@
-package handlers
+package health_check
 
 import (
 	"GoDatabase/src/utils"

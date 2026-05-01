@@ -1,4 +1,4 @@
-package handlers
+package redis
 
 import (
 	"GoDatabase/src/services"
@@ -11,7 +11,7 @@ import (
 	"strconv"
 )
 
-func RedisReadyHandler(w http.ResponseWriter, r *http.Request) {
+func ReadyHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
 	route := utils.RedisReadyRoute + " "
 	redisClient := services.NewRedisClient()
