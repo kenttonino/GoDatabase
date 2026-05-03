@@ -1,3 +1,6 @@
+dep:
+	go mod tidy
+
 docker-redis:
 	# * Pull the latest Redis official image.
 	docker pull redis:latest
@@ -6,9 +9,6 @@ docker-redis:
 
 build:
 	go build -o ./bin/main ./src/main.go
-
-install:
-	go mod tidy
 
 run:
 	go run ./src/main.go
